@@ -1,4 +1,4 @@
-package domain.model;
+package com.aph.musicapp.domain.model;
 
 import lombok.Getter;
 import lombok.Setter;
