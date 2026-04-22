@@ -4,12 +4,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Getter
 @Setter
 public class Album {
-    private String albumId;
+    private UUID albumId;
     private String albumName;
-    private String artistId;
+    private UUID artistId;
     private LocalDate releaseDate;
 }
