@@ -8,7 +8,6 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.UUID;
-import java.time.Duration;
 
 @Repository
 public class PostgresTrackRepository implements TrackRepository {
@@ -30,7 +29,7 @@ public class PostgresTrackRepository implements TrackRepository {
                             track.setTrackId(row.get("track_id", UUID.class));
                             track.setTrackName(row.get("track_name", String.class));
                             track.setAlbumId(row.get("album_id", UUID.class));
-                            track.setDuration(row.get("duration", Duration.class));
+                            track.setDuration(row.get("duration", Integer.class));
                             return track;
                         })
                 .one();

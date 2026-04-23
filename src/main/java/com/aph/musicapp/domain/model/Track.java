@@ -3,7 +3,6 @@ package com.aph.musicapp.domain.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.Duration;
 import java.util.UUID;
 
 @Getter
@@ -12,5 +11,5 @@ public class Track {
     private UUID trackId;
     private String trackName;
     private UUID albumId;
-    private Duration duration;
+    private Integer duration;
 }
