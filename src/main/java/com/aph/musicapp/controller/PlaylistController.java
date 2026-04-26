@@ -24,3 +24,10 @@ public class PlaylistController {
         return service.getTracks(id);
     }
 }
+
+// hhtp://twistmusic.com/artists/ddddddd2-dddd-dddd-dddd-ddddddddddd2/
+
+
+// UUID v4
+
+//
