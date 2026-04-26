@@ -1,5 +1,6 @@
 package com.aph.musicapp.controller;
 
+import com.aph.musicapp.application.dto.TrackResponse;
 import com.aph.musicapp.application.service.GetTracksByPlaylistService;
 import com.aph.musicapp.domain.model.Track;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,9 +21,14 @@ public class PlaylistController {
     }
 
     @GetMapping("/{id}/tracks")
-    public Flux<Track> getTracks(@PathVariable UUID id) {
-        return service.getTracks(id);
-    }
+    public Flux<TrackResponse> getTracks(@PathVariable UUID id) {
+        return service.getTracks(id)
+                .map(track -> {
+                    TrackResponse dto = new TrackResponse();
+                    dto.setTrackName(track.getTrackName());
+                    dto.setDuration(track.getDuration());
+                    return dto;
+                });    }
 }
 
 // hhtp://twistmusic.com/artists/ddddddd2-dddd-dddd-dddd-ddddddddddd2/
